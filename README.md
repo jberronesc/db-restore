@@ -5,7 +5,6 @@
 ## Stay in touch
 
 - Author - [Jefferson Berrones](https://www.linkedin.com/in/jefferson-berrones-304887116/)
-- Author - [Daniel Vera](https://www.linkedin.com/in/jefferson-berrones-304887116/)
 
 ## 🧑‍💻 Developing
 
