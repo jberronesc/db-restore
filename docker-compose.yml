@@ -1,0 +1,33 @@
+services:
+  tipti-backend-lite-dev-db:
+    build: 
+      context: .
+    container_name: tipti-backend-lite-dev-db
+    restart: always
+    env_file: .env
+    ports:
+      - "0.0.0.0:${PORT}:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+    networks:
+      backend:
+        aliases:
+          - ${NETWORK_NAME}
+    deploy:
+      resources:
+        limits:
+          cpus: ${DOCKER_LIMITS_CPUS}
+          memory: ${DOCKER_LIMITS_MEMORY}
+
+volumes:
+  pg_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${PWD}/save_volume
+
+networks:
+  backend:
+    name: ${NETWORK_NAME}
+    external: true
